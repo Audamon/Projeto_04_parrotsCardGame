@@ -1,0 +1,90 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #EEF9BF;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+}
+strong{
+    font-weight: 700;
+}
+
+.game-title{
+    display: flex;
+    margin-top: 5px;
+    justify-content: center;
+    font-size: 56px;
+    color: #75B79E;
+}
+
+.cards-container{
+    width: 55vw;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0px 20vw 0px 20vw ;
+    padding-top: 10px;
+}
+
+.cards{
+    width: 60px;
+    height: 80px;
+    background-color: #A7E9AF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.cards img{
+    width: 50px;
+}
+
+@media(max-width: 640px){
+    body{
+        font-family: 'Roboto', sans-serif;
+        background-color: #EEF9BF;
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+    }
+    strong{
+        font-weight: 700;
+    }
+    
+    .game-title{
+        display: flex;
+        margin-top: 5px;
+        justify-content: space-around;
+        font-size: 36px;
+        color: #75B79E;
+    }
+    
+    .cards-container{
+        width: 90vw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 10px 20vw 0px 20vw ;
+        
+    }
+    
+    .cards{
+        width: 50vw;
+        height: calc(50vw + 30px);
+        margin-bottom: calc(5vh + 5px);
+        background-color: #A7E9AF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+    .cards img{
+        width: 45vw;
+    }
+    
+}
