@@ -18,7 +18,7 @@ strong{
     color: #75B79E;
 }
 
-.cards-container{
+.cards-container ul{
     width: 55vw;
     height: 80vh;
     display: flex;
@@ -62,7 +62,7 @@ strong{
         color: #75B79E;
     }
     
-    .cards-container{
+    .cards-container ul{
         width: 90vw;
         height: 100%;
         display: flex;
@@ -73,7 +73,7 @@ strong{
         
     }
     
-    .cards{
+    .cards {
         width: 50vw;
         height: calc(50vw + 30px);
         margin-bottom: calc(5vh + 5px);
