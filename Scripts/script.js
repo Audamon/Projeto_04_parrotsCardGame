@@ -9,15 +9,14 @@ let rightCards = 0;
 let gifList = [`<img src="Assets/bobrossparrot.gif">`, `<img src="Assets/bobrossparrot.gif">`, `<img src="Assets/explodyparrot.gif">`, `<img src="Assets/explodyparrot.gif">`, `<img src="Assets/fiestaparrot.gif">`, `<img src="Assets/fiestaparrot.gif">`, `<img src="Assets/metalparrot.gif">`, `<img src="Assets/metalparrot.gif">`, `<img src="Assets/revertitparrot.gif">`, `<img src="Assets/revertitparrot.gif">`, `<img src="Assets/tripletsparrot.gif">`, `<img src="Assets/tripletsparrot.gif">`,`<img src="Assets/unicornparrot.gif">`, `<img src="Assets/unicornparrot.gif">`];
 let playedCards = [];
 
-while(cardsQtd < 4 || cardsQtd > 14 || (cardsQtd % 2) !== 0){
-    cardsQtd = Number(prompt("Com quantas cartas quer jogar?"));
-}
-
-
 playedCards.sort(compare);
 
 function gameStart(){
-
+    
+    while(cardsQtd < 4 || cardsQtd > 14 || (cardsQtd % 2) !== 0){
+        cardsQtd = Number(prompt("Com quantas cartas quer jogar?"));
+    }
+    
 
     let cardDeck = document.querySelector("ul");
     counter = 0;
@@ -64,7 +63,7 @@ function compareCards( index1, index2){
     }else{
         rightCards++;
         if(rightCards === (cardsQtd/2)){
-            endGame(plays);
+            setTimeout(endGame, 500, plays);
         }
     }
     
@@ -81,5 +80,21 @@ function turnCardsBack(index1, index2){
 
 function endGame(plays){
     alert(`Você ganhou em ${plays} jogadas!`);
+    let rePlay = prompt("Se quiser jogar de novo digite 'sim' ");
+    if(rePlay === "sim"){
+        cleanScreen();
+        gameStart();
+    }
+}
+
+function cleanScreen(){
+    let ul = document.querySelector("ul");
+    while(ul.firstChild){
+        ul.removeChild(ul.firstChild);
+    } 
+    cardsQtd = 0;
+    playedCards = [];
+    rightCards = 0;
+    plays = 0;
 }
 gameStart();
