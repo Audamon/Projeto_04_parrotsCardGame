@@ -42,11 +42,11 @@ function turnCard(element){
     
     if(index[0] === undefined){
         index[0] = element.id;
-        // element.innerHTML = playedCards[Number(index[0])];
+        
         element.querySelector("img").src = playedCards[Number(index[0])];
     } else if(index[1] === undefined){
         index[1] = element.id;
-        // element.innerHTML = playedCards[Number(index[1])];
+        
         element.querySelector("img").src = playedCards[Number(index[1])];
         compareCards(index);
         index = [];
@@ -55,8 +55,7 @@ function turnCard(element){
 }
 
 function compareCards(index){
-    // let card1 = document.getElementById(index[0]).innerHTML
-    // let card2 = document.getElementById(index[1]).innerHTML
+    
     let card1 = document.getElementById(index[0]).querySelector("img").src
     let card2 = document.getElementById(index[1]).querySelector("img").src
     plays++;
