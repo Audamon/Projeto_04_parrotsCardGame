@@ -3,18 +3,14 @@ body{
     background-color: #EEF9BF;
     display: flex;
     flex-direction: column;
-    
     align-items: center;
-}
-strong{
-    font-weight: 700;
 }
 
 .game-title{
     display: flex;
     margin-top: 5px;
     justify-content: center;
-    font-size: 56px;
+    font-size: 560px;
     color: #75B79E;
 }
 
@@ -25,23 +21,47 @@ strong{
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 0px 20vw 0px 20vw ;
-    padding-top: 10px;
+    padding-top: 100px;
 }
 
 .cards{
-    width: 60px;
-    height: 80px;
+    width: 600px;
+    height: 800px;
     background-color: #A7E9AF;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 100px;
 }
 .cards img{
-    width: 50px;
+    width: 500px;
 }
 
-@media(max-width: 640px){
+.timer-box{
+    position:fixed;
+    top: 20px;
+    right:50px;
+    width: 700px;
+    height: 600px;
+    background-color: #A7E9AF;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.timer{
+    color: #75B79E;
+    font-size: 20em;
+}
+
+.time-unit{
+    color: #75B79E;
+    font-size: 10em;
+  
+} 
+
+@media (max-width: 640px){
     body{
         font-family: 'Roboto', sans-serif;
         background-color: #EEF9BF;
@@ -50,10 +70,7 @@ strong{
         
         align-items: center;
     }
-    strong{
-        font-weight: 700;
-    }
-    
+  
     .game-title{
         display: flex;
         margin-top: 5px;
@@ -87,4 +104,29 @@ strong{
         width: 45vw;
     }
     
+    .timer-box{
+        position: absolute;
+        top: calc(5vh + 10px);
+        right:40vw;
+        width: 70px;
+        height: 60px;
+        background-color: #A7E9AF;
+        padding: 2px;
+        border-radius: 5px;
+        margin: 20px auto;
+        text-align: center;
+    }
+    
+    .timer{
+        color: #75B79E;
+        font-size: 2em;
+    }
+    
+    .time-unit{
+        color: #75B79E;
+        font-size: 1em;
+      
+    } 
+
+
 }
