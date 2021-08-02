@@ -12,9 +12,6 @@ let playedCards = [];
 let time;
 let seconds = 0;
 
-
-playedCards.sort(compare);
-
 function gameStart(){
     
     while(cardsQtd < 4 || cardsQtd > 14 || (cardsQtd % 2) !== 0){
@@ -36,10 +33,8 @@ function gameStart(){
         counter++;
     }
     playedCards.sort(compare);
-     timer();
+    timer();
 }
-
-
 
 function compare() {
 	return Math.random() - 0.5;

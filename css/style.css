@@ -62,6 +62,7 @@ body{
 } 
 
 @media (max-width: 640px){
+    
     body{
         font-family: 'Roboto', sans-serif;
         background-color: #EEF9BF;
@@ -100,6 +101,7 @@ body{
         align-items: center;
         border-radius: 10px;
     }
+
     .cards img{
         width: 45vw;
     }
