@@ -1,12 +1,10 @@
 let cardsQtd = Number(prompt("Com quantas cartas quer jogar?"));
 let counter = 0;
+let index = [];
 
-let index1 = null;
-let index2 = null;
-let index;
 let plays = 0;
 let rightCards = 0;
-let gifList = [`<img src="Assets/bobrossparrot.gif">`, `<img src="Assets/bobrossparrot.gif">`, `<img src="Assets/explodyparrot.gif">`, `<img src="Assets/explodyparrot.gif">`, `<img src="Assets/fiestaparrot.gif">`, `<img src="Assets/fiestaparrot.gif">`, `<img src="Assets/metalparrot.gif">`, `<img src="Assets/metalparrot.gif">`, `<img src="Assets/revertitparrot.gif">`, `<img src="Assets/revertitparrot.gif">`, `<img src="Assets/tripletsparrot.gif">`, `<img src="Assets/tripletsparrot.gif">`,`<img src="Assets/unicornparrot.gif">`, `<img src="Assets/unicornparrot.gif">`];
+let gifList = [`Assets/bobrossparrot.gif`, `Assets/bobrossparrot.gif`, `Assets/explodyparrot.gif`, `Assets/explodyparrot.gif`, `Assets/fiestaparrot.gif`, `Assets/fiestaparrot.gif`, `Assets/metalparrot.gif`, `Assets/metalparrot.gif`, `Assets/revertitparrot.gif`, `Assets/revertitparrot.gif`, `Assets/tripletsparrot.gif`, `Assets/tripletsparrot.gif`,`Assets/unicornparrot.gif`, `Assets/unicornparrot.gif`];
 let playedCards = [];
 
 let time;
@@ -42,25 +40,29 @@ function compare() {
 
 function turnCard(element){
     
-    index = element.id;
+    if(index[0] === undefined){
+        index[0] = element.id;
+        // element.innerHTML = playedCards[Number(index[0])];
+        element.querySelector("img").src = playedCards[Number(index[0])];
+    } else if(index[1] === undefined){
+        index[1] = element.id;
+        // element.innerHTML = playedCards[Number(index[1])];
+        element.querySelector("img").src = playedCards[Number(index[1])];
+        compareCards(index);
+        index = [];
+    }
     
-    element.innerHTML = playedCards[Number(index)];
-    if(index1 === null){
-        index1 = index;
-    } else if(index2 === null){
-        index2 = index;
-        compareCards(index1,index2);
-         index1 = null;
-         index2 = null;
-    }     
 }
 
-function compareCards( index1, index2){
-    let card1 = document.getElementById(index1).innerHTML
-    let card2 = document.getElementById(index2).innerHTML
+function compareCards(index){
+    // let card1 = document.getElementById(index[0]).innerHTML
+    // let card2 = document.getElementById(index[1]).innerHTML
+    let card1 = document.getElementById(index[0]).querySelector("img").src
+    let card2 = document.getElementById(index[1]).querySelector("img").src
     plays++;
     if(card1 !== card2){
-        setTimeout(turnCardsBack, 1000, index1, index2) 
+        setTimeout(turnCardsBack, 1000, index) ;
+        
     }else{
         rightCards++;
         if(rightCards === (cardsQtd/2)){
@@ -71,13 +73,15 @@ function compareCards( index1, index2){
     
 }
 
-function turnCardsBack(index1, index2){
-    let card1 = document.getElementById(index1).innerHTML =  `
+function turnCardsBack(index){
+    
+    let card1 = document.getElementById(index[0]).innerHTML =  `
     <img src="Assets/front.png">
    `;
-   let card2 = document.getElementById(index2).innerHTML =  `
+   let card2 = document.getElementById(index[1]).innerHTML =  `
     <img src="Assets/front.png">
     `;
+    
 }
 
 function endGame(plays, seconds){
